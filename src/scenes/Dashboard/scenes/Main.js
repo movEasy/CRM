@@ -41,7 +41,7 @@ class Main extends Component {
                 itemSelect: true
             })
         } else {
-            return
+            return;
         }
         
     }

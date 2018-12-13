@@ -22,9 +22,6 @@ const Item = styled.div`
             color: red;
         }
     }
-
-
-    svg.
 `;
 
 const BoxItem = (props) => {
