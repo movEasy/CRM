@@ -38,7 +38,13 @@ const Headers = styled.ul`
 class List extends Component {
 
     state = { 
+        listStatus: false,
+     }
 
+     handleListItemStatus = () => {
+         this.setState({
+             listStatus: true
+         })
      }
     
     render() { 

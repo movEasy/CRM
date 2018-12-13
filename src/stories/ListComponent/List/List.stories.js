@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import List from './List';
+import { actions } from '../ListElement/ListElement.stories';
 
 export const data = {
     items: [
@@ -13,4 +14,4 @@ export const data = {
 }
 
 storiesOf('List', module)
-    .add('List', () => <List data={data} />);
+    .add('List', () => <List data={data} {...actions} />);
