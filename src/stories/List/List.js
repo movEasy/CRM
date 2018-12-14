@@ -7,6 +7,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 50rem;
+
+    border-bottom: 0.01rem solid lightgray;
 `;
 
 const Headers = styled.div`
@@ -27,6 +29,8 @@ const Headers = styled.div`
 const UlContainer = styled.ul`
     display: flex;
     flex-direction: column;
+
+    border-bottom: 0.01rem solid lightgray;
     
     margin: 0;
     padding: 0;
@@ -65,7 +69,6 @@ class List extends Component {
         const { data } = this.props;
         const { showAll } = this.state;
 
-        let objLength = Object.entries(data).slice(1).length;
         let dataWithoutHeaders = Object.values(data).slice(1);
     
         let dataObjShortend = Object.values(dataWithoutHeaders).slice(0,5);
@@ -84,11 +87,9 @@ class List extends Component {
                     <Headers>
                         { data.headers.map(el => <li>{el}</li>)}
                     </Headers>
-    
-                    {/* { objLength >= 5 ? Object.entries(dataObjShortend).map(el => <ListElement data={el[1]} />) : Object.entries(data).slice(1).map(el => <ListElement data={el[1]} />)} */}
 
                     { Object.entries(payload).map(el => <ListElement data={el[1]} />) }
-
+        
                 </UlContainer>
                 <Button onClick={this.handleShowAll}>Show all</Button>
             </Container>
