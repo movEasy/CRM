@@ -12,7 +12,6 @@ const Container = styled.div`
     padding-left: ${props => props.theme.paddingContainer};
     padding-right: ${props => props.theme.paddingContainer};
     border: 1px solid black;
-    height: 50vh;
 `;
 
 const BoxContainer = styled.div`
