@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // Import components
 import Box from './components/Box';
 import BoxItem from './components/BoxItem';
+import Index from './components/Box/index';
 
 const Container = styled.div`
     display: flex;
@@ -21,18 +22,28 @@ const BoxContainer = styled.div`
 `;
 
 const data = {
-    element1: {
-        id: '1',
-        info: ['XXX1', 'Corporate Income Tax', '10'],
-    },
-    element2: {
-        id: '2',
-        info: ['XXX2', 'Corporate Income Tax', '14'],
-    },
-    element3: {
-        id: '3',
-        info: ['XXX3', 'Corporate Income Tax', '11'],
-    },
+    departments:  {
+        department1:{
+            id: '1', 
+            infoItem: ['XXX1', 'Corporate Income Tax', '10'],
+            details: [
+                ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
+                ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
+                ['4016872', 'Siemens/MD/Christiaan Torres Stocki', 'complete'],
+                ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
+                ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
+                ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
+            ]
+        },
+        department2:{
+            id: '2', 
+            infoItem: ['XXX2', 'Corporate Tax', '1']
+        },
+        department3:{
+            id: '3', 
+            infoItem: ['XXX3', 'Income Tax', '11']
+        },
+    }
 }
 
 const details = [
@@ -79,8 +90,8 @@ class Main extends Component {
         return (
             <Container>
                 <BoxContainer>
-                    <Box payload={data} details={details} headers={['Service line', 'Description', 'No. Projects']} />
-                    {/* <Box payload={data} headers={null} /> */}
+                    <Index data={data} />
+                    <Index data={data} />
                 </BoxContainer>
             </Container>
         )

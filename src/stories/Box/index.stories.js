@@ -16,10 +16,6 @@ const data = {
                 ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
                 ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
                 ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
-                ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
-                ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
-                ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
-                ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
             ]
         },
         department2:{

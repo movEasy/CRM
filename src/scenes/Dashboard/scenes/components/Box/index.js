@@ -7,10 +7,9 @@ import OverviewDetails from './OverviewDetails/OverviewDetails';
 const WrapperMain = styled.div`
     border: 1px solid black;
     width: 50rem;
-    height: 30rem;
+    height: 20rem;
     border-radius: 0.4rem;
     overflow: hidden;
-    font-size: 1rem;
 `;
 
 const Header = styled.div`
@@ -21,10 +20,6 @@ const Header = styled.div`
     max-width: 100%;
     background-color: #00A2A1;
     border-radius: 0.4rem 0.4rem 0 0;
-
-    h2 {
-        font-size: 0.1rem;
-    }
 
     color: white;
 
