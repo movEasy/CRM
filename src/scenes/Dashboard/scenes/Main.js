@@ -22,39 +22,27 @@ const BoxContainer = styled.div`
 
 const data = {
     element1: {
+        id: '1',
         info: ['XXX1', 'Corporate Income Tax', '10'],
-        details: [
-            ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
-            ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
-            ['4016872', 'Siemens/MD/Christiaan Torres Stocki', 'complete'],
-            ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
-            ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
-            ['4016146', 'M&PS Siemens Project 7P', 'notComplete']
-        ]
     },
     element2: {
+        id: '2',
         info: ['XXX2', 'Corporate Income Tax', '14'],
-        details: [
-            ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
-            ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
-            ['4016872', 'Siemens/MD/Christiaan Torres Stocki', 'complete'],
-            ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
-            ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
-            ['4016146', 'M&PS Siemens Project 7P', 'notComplete']
-        ]
     },
     element3: {
+        id: '3',
         info: ['XXX3', 'Corporate Income Tax', '11'],
-        details: [
-            ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
-            ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
-            ['4016872', 'Siemens/MD/Christiaan Torres Stocki', 'complete'],
-            ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
-            ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
-            ['4016146', 'M&PS Siemens Project 7P', 'notComplete']
-        ]
     },
 }
+
+const details = [
+        ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
+        ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
+        ['4016872', 'Siemens/MD/Christiaan Torres Stocki', 'complete'],
+        ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
+        ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
+        ['4016146', 'M&PS Siemens Project 7P', 'notComplete']
+];
 
 class Main extends Component {
     state = {
@@ -73,6 +61,7 @@ class Main extends Component {
     }
 
     render() {
+
         // let box;
 
         // if ( this.state.itemSelect === false ) {
@@ -90,7 +79,8 @@ class Main extends Component {
         return (
             <Container>
                 <BoxContainer>
-                    <Box payload={data} headers={['Service line', 'Description', 'No. Projects']} />
+                    <Box payload={data} details={details} headers={['Service line', 'Description', 'No. Projects']} />
+                    {/* <Box payload={data} headers={null} /> */}
                 </BoxContainer>
             </Container>
         )

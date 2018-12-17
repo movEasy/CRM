@@ -31,12 +31,19 @@ const Item = styled.div`
 
 const BoxItem = (props) => {
 
-    const { isSelected, handleElementSelect, info} = props;
+    const { isSelected, handleElementSelect, info, details} = props;
 
     let item;
+    // console.log(details.map(el => console.log(el)));
+    console.log(details.map(el => console.log(el)))
 
     if ( isSelected ) {
-        item = ('')
+        item = (<Item>
+            {
+                
+            }
+        </Item>
+        )
     } else {
         item = (
             <Item onClick={ handleElementSelect }>
@@ -50,11 +57,7 @@ const BoxItem = (props) => {
     return (
 
         item
-        // <Item key={props.info[0]} onClick={() => props.selectItem(props.info[0])}>
-        //     {props.info.map(el => {
-        //         return el === 'complete' ? <MdCheckCircle className='complete' key={Math.random()}/> : el === 'notComplete' ? <MdCheckCircle className='notComplete' key={Math.random()} /> :  <div key={Math.random()}>{el}</div>
-        //     })}
-        // </Item>
+
     )
 }
 

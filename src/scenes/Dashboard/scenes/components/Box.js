@@ -10,6 +10,7 @@ const Container = styled.div`
     width: 40rem;
     height: 18rem;
     box-shadow: 0 1rem 2rem rgba(0,0,0,0.19), 0 0.6rem 0.6rem rgba(0,0,0,0.20);
+    margin-bottom: 2rem;
 `;
 
 const Header = styled.div`
@@ -36,7 +37,8 @@ const Content = styled.div`
 class Box extends Component {
 
     state = {
-        elementSelected: false
+        elementSelected: false,
+        id: '',
     }
 
     handleElementSelect = () => {
@@ -46,8 +48,9 @@ class Box extends Component {
     }
 
     render() {
+        console.log(this.state.elementSelected);
 
-        const { headers, payload } = this.props;
+        const { headers, payload, details } = this.props;
         
         let header;
 
@@ -62,19 +65,14 @@ class Box extends Component {
                 </Header>)
         }
         
-        console.log(payload)
-        // console.log(Object.entries(payload['element1'].Object.values().map(el => el)));
+        console.log(Object.values(payload));
+
         return (
             <Container>
                 {header}
                 <Content>
-                    { Object.values(payload).map(el => <BoxItem key={'__ID__' + el} info={el['info']} />)}
+                    { Object.values(payload).map(el => <BoxItem handleElementSelect={this.handleElementSelect} isSelected={this.state.elementSelected} key={'__ID__' + el['id']} info={el['info']} details={details} />)}
                 </Content>
-                {/* <Content>
-                    <BoxItem info={['XXX1', 'Corporate Income Tax', '10']} isSelected={this.state.elementSelected} payload={this.props.payload} handleElementSelect={this.handleElementSelect} />
-                    <BoxItem info={['XXX2', 'Corporate Income Tax', '10']} selectItem={(id) => this.handleSelectItem(id)} />
-                    <BoxItem info={['XXX3', 'Corporate Income Tax', '10']} selectItem={(id) => this.handleSelectItem(id)} />
-                </Content> */}
                 <button>Click</button>
             </Container>
         )
