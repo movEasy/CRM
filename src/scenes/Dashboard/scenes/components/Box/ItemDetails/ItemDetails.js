@@ -6,15 +6,20 @@ const ItemDetailsWrapper = styled.div`
     display: flex;
     max-width: 100%;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     padding-left: 1rem;
     padding-right: 1rem;
-    /* flex: 1 0 auto; */
+    flex: 1 0 auto;
     max-height: 10%;
 
     :hover {
         color: blueviolet;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.2rem;
     }
 
     svg {

@@ -19,6 +19,7 @@ const WrapperDetails = styled.div`
         justify-content: flex-end;
         height: 10%;
         padding: 1rem;
+        margin-bottom: 1rem;
     }
 `;
 

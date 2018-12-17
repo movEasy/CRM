@@ -1,18 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MdCheckCircle } from 'react-icons/md';
 
 const ItemWrapper = styled.div`
     display: flex;
     max-width: 100%;
     justify-content: space-between;
+    align-items: center;
 
     padding-left: 1rem;
     padding-right: 1rem;
-    flex: 1 0 9%;
+    flex: 1 1 auto;
     max-height: 10%;
 
     :hover {
         color: blueviolet;
+    }
+
+    font-size: 1rem;
+
+    svg {
+        position: relative;
+        top: 1;
+        left: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        
+        &.complete {
+            color: green;
+        }
+
+        &.not-complete {
+            color: red;
+        }
     }
 
 `;
@@ -20,7 +40,7 @@ const ItemWrapper = styled.div`
 const Items = ({ data: { id, infoItem }, onItemSelect }) => {
     return ( 
         <ItemWrapper key={Math.random()} onClick={() => onItemSelect(id)}>
-            { infoItem.map(el => <p>{el}</p>)}
+            { infoItem.map(el => el === 'notComplete' ? <MdCheckCircle className='not-complete'/> : el === 'complete' ? <MdCheckCircle className='complete' /> : <p>{el}</p>)}
         </ItemWrapper>
      );
 }
