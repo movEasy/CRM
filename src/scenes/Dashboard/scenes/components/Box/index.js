@@ -6,7 +6,7 @@ import OverviewDetails from './OverviewDetails/OverviewDetails';
 
 const WrapperMain = styled.div`
     border: 1px solid black;
-    width: 50rem;
+    width: 45rem;
     height: 23rem;
     border-radius: 0.4rem;
     overflow: hidden;

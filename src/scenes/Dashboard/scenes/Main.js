@@ -10,6 +10,7 @@ const Container = styled.div`
     align-items: center;
     padding-left: ${props => props.theme.paddingContainer};
     padding-right: ${props => props.theme.paddingContainer};
+    height: 50rem;
 `;
 
 const BoxContainer = styled.div`
