@@ -36,7 +36,6 @@ const Info = ({ data }) => {
             <p>{data.name}</p>
             <p>{data.company}</p>
             <p>{data.position}</p>
-            <br/>
             <p>{data.tel}</p>
             <p>{data.mail}</p>
         </InfoWrapper>

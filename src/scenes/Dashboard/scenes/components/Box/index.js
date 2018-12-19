@@ -5,15 +5,19 @@ import Overview from './Overview/Overview';
 import OverviewDetails from './OverviewDetails/OverviewDetails';
 
 const WrapperMain = styled.div`
-    border: 1px solid black;
-    width: 45rem;
-    height: 23rem;
+    /* width: 45rem;
+    height: 23rem; */
+    width: 100%;
+    max-height: 50%;
+    min-width: 35rem;
+    min-height: 20rem;
     border-radius: 0.4rem;
     overflow: hidden;
+    border: 0.06rem solid black;
 
-    &:first-child {
+    /* &:first-child {
         margin-bottom: 2rem;
-    }
+    } */
 `;
 
 const Header = styled.div`

@@ -8,6 +8,7 @@ const WrapperPhotoBox = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1.5rem;
 
     svg {
         cursor: pointer;
@@ -24,7 +25,7 @@ class PhotoBox extends Component {
     
     state = {  
         start: 0,
-        end: 3
+        end: 5
     }
 
     handlePhotoEnd = (e) => {
@@ -39,8 +40,8 @@ class PhotoBox extends Component {
             }))
         } else if ( name === 'back') {
             this.setState( prevState => ({
-                start: prevState.end === photoArrLength ? prevState.start - 1 : prevState.start ,
-                end: prevState.end === photoArrLength ? prevState.end - 1 : prevState.end 
+                start: prevState.start === 0 ? prevState.start : prevState.start - 1,
+                end: prevState.start === 0 ? prevState.end : prevState.end - 1
             }))
         }
     }
@@ -50,15 +51,13 @@ class PhotoBox extends Component {
         const { data } = this.props;
         const { start, end } = this.state;
 
-        console.log(Object.values(data).length);
-
-        let slicedData = Object.values(data).splice(start, end);
+        let slicedData = Object.values(data).slice(start, end);
         
         return ( 
             <WrapperPhotoBox>
-                <button value='back' name='back' onClick={this.handlePhotoEnd}><MdChevronLeft /></button>
+                <button value='back' name='back' onClick={this.handlePhotoEnd}> back </button>
                 { Object.values(slicedData).map( val => <Contact key={Math.random()} data={ { person: val } } />)}
-                <button value='next' name='next' onClick={this.handlePhotoEnd}><MdChevronRight /></button>
+                <button value='next' name='next' onClick={this.handlePhotoEnd}> next </button>
             </WrapperPhotoBox>
          );
     }

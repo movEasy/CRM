@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 // Import components
 import Index from './components/Box/index';
+import PieChart from './components/PieChart/PieChart';
+
+import BarChart from '../../../stories/BarChart/BarChart';
 
 const Container = styled.div`
     display: flex;
@@ -13,8 +16,9 @@ const Container = styled.div`
     height: 50rem;
 `;
 
-const BoxContainer = styled.div`
+const ElementContainer = styled.div`
     display: flex;
+    height: 90%;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 1.5rem;
@@ -86,10 +90,19 @@ class Main extends Component {
 
         return (
             <Container>
-                <BoxContainer>
+                <ElementContainer>
                     <Index data={data} bgc='green' headers={['Service line', 'Description', 'No. projects']} />
                     <Index data={data2} bgc='eggplant' headers={['Deadline', 'Keyperson', 'Task']}/>
-                </BoxContainer>
+                </ElementContainer>
+                <ElementContainer>
+                    <PieChart year='2018' />
+                    <PieChart year='2017' />
+                </ElementContainer>
+                <ElementContainer>
+                    <PieChart year='2018' />
+                    <PieChart year='2017' />
+                </ElementContainer>
+                {/* <BarChart /> */}
             </Container>
         )
     }

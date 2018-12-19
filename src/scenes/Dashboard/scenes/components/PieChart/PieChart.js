@@ -10,8 +10,12 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
-    width: 20rem;
+    width: 100%;
+    height: 100%;
+
+    h4 {
+        margin: 0;
+    }
 `;
 class PC extends Component {
     state = { 
@@ -20,9 +24,10 @@ class PC extends Component {
 
     render() { 
         console.log(window.innerWidth)
+        const { year } = this.props;
         return (
             <Wrapper>
-            <h4>Bruttoomsætning 2017</h4>
+            <h4>{`Bruttoomsætning ${year}`}</h4>
                 <PieChart width={500} height={250}>
                     <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={90}>
                         {

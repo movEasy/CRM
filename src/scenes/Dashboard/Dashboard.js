@@ -13,6 +13,9 @@ import MultipleColorBar from './components/MultipleColorBar';
 import CompanyHeadline from './components/CompanyHeadline';
 import Navigation from './components/Navigation';
 import Main from './scenes/Main';
+import PhotoBox from '../../stories/PhotoBox/PhotoBox';
+
+import { data } from '../../stories/PhotoBox/PhotoBox.stories';
 
 class Dashboard extends Component {
   render() {
@@ -24,6 +27,7 @@ class Dashboard extends Component {
                     <CompanyHeadline />
                     <Navigation />
                     <Main />
+                    <PhotoBox data={data}/>
                 </DashboardContainer>
             </ThemeProvider>
         )
