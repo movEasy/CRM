@@ -20,9 +20,17 @@ const data = {
     }
 }
 
+const dataLines = [
+    ['20', 'Gross Revenue'],
+    ['45', 'Revenue'],
+    ['30', 'Realized Revenue'],
+    ['7', 'Misc.'],
+];
+
+
 const color = {
     elementColor: ['#473698', '#460A68', '#6D2077', '#00A2A1']
 }
 
 storiesOf('Charts', module)
-    .add('Bar', () => <BarChart data={data} color={color} />);
+    .add('Bar', () => <BarChart data={data} color={color} dataLines={dataLines} />);

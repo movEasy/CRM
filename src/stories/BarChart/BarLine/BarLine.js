@@ -22,10 +22,10 @@ const BarLineEl = styled.div`
 `;
 
 const BarLine = ({ data, color }) => {
-
+    console.log(color)
     return ( 
-        <BarLineEl>
-            <div><p>Revenue</p></div>
+        <BarLineEl height={data[0]}>
+            <div color={color} ><p>{data[1]}</p></div>
         </BarLineEl>
      );
 }

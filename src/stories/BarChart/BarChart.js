@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Chart from './Chart/Chart';
+import BarLineWrapper from './BarLineWrapper/BarLineWrapper';
 
 const Wrapper = styled.div`
     display: flex;
@@ -17,12 +18,14 @@ class BarChart extends Component {
      }
     render() { 
         const { ...cus_economy } = this.props.data;
+        const { dataLines } = this.props.dataLines;
         const { ...elementColor } = this.props.color;
 
         return ( 
             <Wrapper>
                 { Object.values(cus_economy).map(el => <Chart data={el.exp} color={elementColor} />) }
                 { Object.values(cus_economy).map(el => <Chart data={el.achived} color={elementColor} />) }
+                <BarLineWrapper data={dataLines} />
             </Wrapper>
          );
     }
