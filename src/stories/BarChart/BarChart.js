@@ -1,172 +1,127 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { VictoryLabel, VictoryBar, VictoryStack} from 'victory';
+
+import Chart from './Chart/Chart';
 
 const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    /* height: 30rem;
-    width: 15rem; */
-
-    height: 100%;
-    width: 100%;
-`;
-
-const BarWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
     align-items: center;
-
-    h2 {
-        margin: 0;
-        margin-bottom: -2rem;
-        font-size: 1.5rem;
-    }
+    height: 35rem;
+    width: 40rem;
 `;
-
-const data1 = [
-    { x:1, y: 17},
-];
-
-const data2 = [
-    { x:1, y: 20},
-];
-
-const data3 = [
-    { x:1, y: 60},
-];
-
-const data4 = [
-    { x:1, y: 10},
-];
-
-const data5 = [
-    { x:1, y: 17},
-];
-
-const data6 = [
-    { x:1, y: 50},
-];
-
-const data7 = [
-    { x:1, y: 30},
-];
-
-const data8 = [
-    { x:1, y: 10},
-];
-
-const colors = ['gray', 'orange', 'green', 'magenta']
-
 
 class BarChart extends Component {
-    state = {  }
+    state = { 
+
+     }
     render() { 
+        const { ...cus_economy } = this.props.data;
+        const { ...elementColor } = this.props.color;
+
         return ( 
             <Wrapper>
-            <BarWrapper>
-            <h2>Expected</h2>
-                <VictoryStack
-                    domain={{x: [0, 1], y: [0, 100]}}
-                    width={100}
-                    style={{
-                        data: {
-                            strokeWidth: 15
-                            }
-                        }}
-                >
-                    <VictoryBar
-                        labelComponent={<VictoryLabel dy={40}/>}
-                        data={data4}
-                        colorScale={['blue']}
-                        labels={['3%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                        
-                    />
-                    <VictoryBar 
-                        labelComponent={<VictoryLabel dy={90}/>}
-                        data={data3}
-                        colorScale={['green']}
-                        labels={['60%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                    />
-                    <VictoryBar 
-                        labelComponent={<VictoryLabel dy={52}/>}
-                        data={data2}
-                        colorScale={['yellow']}
-                        labels={['20%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                    />
-                    <VictoryBar 
-                        labelComponent={<VictoryLabel dy={35}/>}
-                        data={data1}
-                        colorScale={['red']}
-                        labels={['17%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                    />
-                </VictoryStack>
-                </BarWrapper>
-                <BarWrapper>
-                <h2>Achieved</h2>
-                <VictoryStack
-                    domain={{x: [0, 1], y: [0, 100]}}
-                    width={100}
-                    style={{
-                        data: {
-                            strokeWidth: 15
-                            }
-                        }}
-                >
-                    <VictoryBar
-                        labelComponent={<VictoryLabel dy={40}/>}
-                        data={data8}
-                        colorScale={['blue']}
-                        labels={['3%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                        
-                    />
-                    <VictoryBar 
-                        labelComponent={<VictoryLabel dy={60}/>}
-                        data={data7}
-                        colorScale={['green']}
-                        labels={['28%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                    />
-                    <VictoryBar 
-                        labelComponent={<VictoryLabel dy={80}/>}
-                        data={data6}
-                        colorScale={['yellow']}
-                        labels={['40%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                    />
-                    <VictoryBar 
-                        labelComponent={<VictoryLabel dy={35}/>}
-                        data={data5}
-                        colorScale={['red']}
-                        labels={['17%']}
-                        style={{
-                            labels: { fill: 'white', fontSize: '10'}
-                        }}
-                    />
-                </VictoryStack>
-                </BarWrapper>
+                { Object.values(cus_economy).map(el => <Chart data={el.exp} color={elementColor} />) }
+                { Object.values(cus_economy).map(el => <Chart data={el.achived} color={elementColor} />) }
             </Wrapper>
          );
     }
 }
  
 export default BarChart;
+
+// const Chart = styled.div`
+//     display: flex;
+//
+//    <Wrapper>     flex-direction: column;
+//     height: 100%;
+//     width: 50%;
+    
+//     &:first-child {
+//         margin-right: 1rem;
+//     }
+
+//     margin-top: 2rem;
+
+//     :last-child {
+//         margin-top: 0;
+//     }
+// `;
+
+// const BarElement = styled.div`
+//     background-color: ${ props => props.color };
+//     border: ${ props => props.borderColor === '' ? `` : `1px solid ${props.borderColor}` };
+//     height: ${ props => props.height && `${props.height}%` };
+//     width: 100%;
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+    
+//     p {
+//         color: black;
+//         margin: 0;
+//     }
+// `;
+
+// const BarLine = styled.div`
+//     height: ${ props => props.height && `${props.height}%` };
+//     width: 100%;
+
+//     div {
+//         width: 100%;
+//         border-bottom: 0.01rem solid  ${ props => props.color };
+//         height: 2.07rem;
+//     }
+
+//     p {
+//         position: relative;
+//         top: 50%;
+//         bottom: 0rem;
+//         left: 1rem;
+//         margin: 0;
+//         font-size: 1rem;
+//     }
+// `;
+
+// class BarChart extends Component {
+//     state = {  }
+//     render() {
+//         return (
+//             <Wrapper>
+//                 <Chart>
+//                     <BarElement height='20' color='#6D2077'>
+//                         <p>17%</p>
+//                     </BarElement>
+//                     <BarElement height='30' color='#00A2A1' />
+//                     <BarElement height='30' color='#460A68' />
+//                     <BarElement height='20' color='#473698' />
+//                 </Chart>
+//                 <Chart>
+//                     <BarElement height='20' borderColor='#6D2077' color='white'>
+//                         <p>provision for coverage</p>
+//                     </BarElement>
+//                     <BarElement height='30' borderColor='#00A2A1' color='white' />
+//                     <BarElement height='30' borderColor='#460A68' color='white' />
+//                     <BarElement height='20' borderColor='#473698' color='white' />
+//                 </Chart>
+//                 <Chart>
+//                     <BarLine height='20' color='#6D2077'>
+//                         <div><p>Rev</p></div>
+//                     </BarLine>
+//                     <BarLine height='30' color='#00A2A1'>
+//                         <div><p>Cost</p></div>
+//                     </BarLine>
+//                     <BarLine height='30' color='#460A68'>
+//                         <div><p>Indirect cost</p></div>
+//                     </BarLine>
+//                     <BarLine height='20' color='#473698'>
+//                         <div><p>Misc.</p></div>
+//                     </BarLine>
+//                 </Chart>
+//             </Wrapper>
+//          );
+//     }
+// }
+
+// export default BarChart;

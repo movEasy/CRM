@@ -11,6 +11,10 @@ const WrapperDepartment = styled.div`
     max-width: 100%;
     height: 100%;
     overflow-y: scroll;
+
+    div:nth-child(even) {
+        background-color: lightgray;
+    }
 `;
 
 const Overview = ({ data: { departments }, onItemSelect}) => {

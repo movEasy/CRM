@@ -10,6 +10,10 @@ const ItemWrapper = styled.div`
 
     padding-left: 1rem;
     padding-right: 1rem;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+
     flex: 1 1 auto;
     max-height: 10%;
 
@@ -37,10 +41,13 @@ const ItemWrapper = styled.div`
 
 `;
 
-const Items = ({ data: { id, infoItem }, onItemSelect }) => {
+const Items = ({ data2: { id, infoItem, status }, onItemSelect }) => {
+    
+    let stat = status;
+
     return ( 
         <ItemWrapper key={Math.random()} onClick={() => onItemSelect(id)}>
-            { infoItem.map(el => el === 'notComplete' ? <MdCheckCircle className='not-complete'/> : el === 'complete' ? <MdCheckCircle className='complete' /> : <p>{el}</p>)}
+            { infoItem.map((el, i) => i === 0 && stat === 'complete' ? <span><MdCheckCircle className='not-complete'/>{el}</span> : i === 0 && stat === 'complete' ? <span> <MdCheckCircle className='complete' /> {el} </span> : <p>{el}</p>)}
         </ItemWrapper>
      );
 }

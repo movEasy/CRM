@@ -53,7 +53,8 @@ const data2 = {
     departments:  {
         department1:{
             id: '1', 
-            infoItem: ['complete','31-2012-2018', 'HL', 'Ryk falk for om vi skal lave et TP review(...)'],
+            infoItem: ['31-2012-2018', 'HL', 'Ryk falk for om vi skal lave et TP review(...)'],
+            status: 'notComplete',
             details: [
                 ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
                 ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
@@ -65,7 +66,8 @@ const data2 = {
         },
         department2:{
             id: '2', 
-            infoItem: ['notComplete', '01-04-2019', 'JA', 'Tag fat i CArsten omkring Mobility policy']
+            status: 'complete',
+            infoItem: ['notComplete', '01-04-2019', 'JA', 'Tag fat i Carsten omkring Mobility policy']
         },
     }
 }
@@ -91,7 +93,7 @@ class Main extends Component {
         return (
             <Container>
                 <ElementContainer>
-                    <Index data={data} bgc='green' headers={['Service line', 'Description', 'No. projects']} />
+                    {/* <Index data={data} bgc='green' headers={['Service line', 'Description', 'No. projects']} /> */}
                     <Index data={data2} bgc='eggplant' headers={['Deadline', 'Keyperson', 'Task']}/>
                 </ElementContainer>
                 <ElementContainer>

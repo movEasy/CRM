@@ -15,6 +15,8 @@ const WrapperMain = styled.div`
     overflow: hidden;
     border: 0.06rem solid black;
 
+    background-color: white;
+
     /* &:first-child {
         margin-bottom: 2rem;
     } */
@@ -26,13 +28,12 @@ const Header = styled.div`
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
-    background-color: ${ props => 
-        (props.bgc === 'green' && '#00A2A1')
-        || (props.bgc === 'eggplant' && '#460A68')
-    };
     border-radius: 0.4rem 0.4rem 0 0;
 
-    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    color: black;
 
     h2 {
         font-size: 1rem;
@@ -111,7 +112,7 @@ class Main extends Component {
             box =
             (
                 <WrapperMain>
-                    <Header bgc={bgc} >
+                    <Header>
                         {headers.map(el => <h2>{el}</h2>)}
                     </Header>
                     <Overview data={ { departments: departments} } onItemSelect={(id) => this.handleDepartmentSelect(id)} />
