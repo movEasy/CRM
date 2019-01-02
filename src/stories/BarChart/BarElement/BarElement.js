@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import BarLine from '../BarLine/BarLine';
+// import BarLine from '../BarLine/BarLine';
 
 const Bar = styled.div`
     display: flex;
@@ -37,18 +37,29 @@ const El = styled.div`
     p {
         margin: 0;
         line-break: strict;
-        font-size: ${ props => props.text && '0.8rem'}
+        font-size: ${ props => props.text && '0.8rem'};
+    }
+`;
+
+const ElInner = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+
+    p {
+        height: 40%;
     }
 `;
 
 const BarElement = ({ data, color }) => {
     console.log(data);
-
     return ( 
-        <Bar height={data[0]}>
-            { data.map( (el, i) => i !== 1 ? 
+        <Bar height={data.totalPct}>
+            { Object.values(data).map( (el, i) => i !== 1 ? 
                 <El className='left-row' bgc={i} width='small' color={color} > <p> {el}% </p> </El> :
-                <El text width='large' bgc={i} color={color} borderColor={color} > <p>{el}</p> </El>
+                <El text width='large' bgc={i} color={color} borderColor={color} > <ElInner>{el.map((elInner) => <p height={elInner[0]}>{elInner[1]}</p>)}</ElInner> </El>
             )}
         </Bar>
      );

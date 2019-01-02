@@ -3,12 +3,16 @@ import styled from 'styled-components';
 
 const BarLineEl = styled.div`
     height: ${ props => props.height && `${props.height}%` };
-    width: 30%;
+    position: relative;
+    top: 0rem;
+    left: 0rem;
 
     div {
         width: 100%;
         border-bottom: 0.01rem solid  ${ props => props.color };
-        height: 2.07rem;
+        position: relative;
+        top: 0rem;
+        left: 0rem;
     }
 
     p {
@@ -22,7 +26,7 @@ const BarLineEl = styled.div`
 `;
 
 const BarLine = ({ data, color }) => {
-    console.log(color)
+    console.log(data)
     return ( 
         <BarLineEl height={data[0]}>
             <div color={color} ><p>{data[1]}</p></div>

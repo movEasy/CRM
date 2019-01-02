@@ -25,7 +25,7 @@ class BarChart extends Component {
             <Wrapper>
                 { Object.values(cus_economy).map(el => <Chart data={el.exp} color={elementColor} />) }
                 { Object.values(cus_economy).map(el => <Chart data={el.achived} color={elementColor} />) }
-                <BarLineWrapper data={dataLines} />
+                <BarLineWrapper data={this.props.dataLines} />
             </Wrapper>
          );
     }
