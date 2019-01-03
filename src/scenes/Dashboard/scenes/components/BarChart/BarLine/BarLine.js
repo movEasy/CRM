@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const BarLineEl = styled.div`
     height: ${ props => props.height && `${props.height}%` };
@@ -25,13 +26,18 @@ const BarLineEl = styled.div`
     }
 `;
 
-const BarLine = ({ data, color }) => {
+const BarLine = (props) => {
 
     return ( 
-        <BarLineEl height={data[0]}>
-            <div color={color} ><p>{data[1]}</p></div>
+        <BarLineEl height={props.data[0]}>
+            <div color={props.color} ><p>{props.data[1]}</p></div>
         </BarLineEl>
      );
+}
+
+BarLine.propTypes = {
+    data: PropTypes.array,
+    color: PropTypes.string
 }
  
 export default BarLine;

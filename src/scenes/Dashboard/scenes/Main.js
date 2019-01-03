@@ -103,7 +103,7 @@ const data3 = {
                 ]
             },
         },
-        achived: {
+    achived: {
             gross_rev: {
                 totalPct: '20',
                 details: [

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import BarElement from '../BarElement/BarElement';
 
@@ -15,14 +16,24 @@ const ChartWrapper = styled.div`
     }
 `;
 
-const Chart = ({ data, color }) => {
-    const { elementColor } = color;
+const Chart = (props) => {
+    const { elementColor } = props.color;
 
     return ( 
         <ChartWrapper>
-            {Object.keys(data).map((el, i) => <BarElement data={data[el]} color={elementColor[i]} />)}
+            {Object.keys(props.data).map((el, i) => <BarElement data={props.data[el]} color={elementColor[i]} />)}
         </ChartWrapper>
      );
+}
+
+Chart.propTypes = {
+    data: PropTypes.shape({
+        gross_rev: PropTypes.object,
+        rev: PropTypes.object,
+        realized_rev: PropTypes.object,
+        misc: PropTypes.object,
+    }),
+    color: PropTypes.object,
 }
  
 export default Chart;

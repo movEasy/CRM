@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import BarLine from '../BarLine/BarLine';
 
@@ -10,16 +11,21 @@ const Wrapper = styled.div`
     width: 20%;
 `;
 
-const BarLineWrapper = ({ data, color }) => {
+const BarLineWrapper = (props) => {
 
-    const { ...elementColor } = color
+    const { ...elementColor } = props.color
 
     return ( 
         <Wrapper>
-            {data.map((el, i) => <BarLine data={el} color={elementColor[i]} />)}
+            {props.data.map((el, i) => <BarLine data={el} color={elementColor[i]} />)}
         </Wrapper>
      );
 
+}
+
+BarLineWrapper.propTypes = {
+    data: PropTypes.array,
+    color: PropTypes.arrayOf(PropTypes.string)
 }
  
 export default BarLineWrapper;
