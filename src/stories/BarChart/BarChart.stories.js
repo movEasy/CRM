@@ -9,41 +9,61 @@ const data = {
             gross_rev: {
                 totalPct: '17',
                 details: [
-                    ['50', 'Test 50%'],
-                    ['30', 'Test 30%'],
-                    ['20', 'Test 20%'],
+                    ['100', 'Provision for under coverage'],
                 ]
             },
             rev: {
                 totalPct: '20',
                 details: [
-                    ['50', 'Test 50%'],
-                    ['30', 'Test 30%'],
-                    ['20', 'Test 20%'],
+                    ['50', 'Ufaktureret udlæg'],
+                    ['50', 'Not invoiced'],
                 ]
             },
             realized_rev: {
                 totalPct: '60',
                 details: [
-                    ['50', 'Test 50%'],
-                    ['30', 'Test 30%'],
-                    ['20', 'Test 20%'],
+                    ['10', 'Underdækning'],
+                    ['20', 'Open balance'],
+                    ['10', 'Overdækning'],
+                    ['60', 'Invoiced'],
                 ]
             },
             misc: {
                 totalPct: '3',
                 details: [
-                    ['50', 'Test 50%'],
-                    ['30', 'Test 30%'],
-                    ['20', 'Test 20%'],
+                    ['100', 'Nedskrivning på debitorer'],
                 ]
             },
         },
         achived: {
-            gross_rev: ['20', ['Provision for under coverage', 'Provision for under coverage', 'Provision for under coverage']],
-            rev: ['45', ['Provision for under coverage', 'Provision for under coverage', 'Provision for under coverage']],
-            realized_rev: ['30', ['Provision for under coverage', 'Provision for under coverage', 'Provision for under coverage']],
-            misc: ['7', ['Provision for under coverage', 'Provision for under coverage', 'Provision for under coverage']],
+            gross_rev: {
+                totalPct: '20',
+                details: [
+                    ['100', 'Provision for under coverage'],
+                ]
+            },
+            rev: {
+                totalPct: '45',
+                details: [
+                    ['10', 'Ufaktureret udlæg'],
+                    ['90', 'Not invoiced'],
+                ]
+            },
+            realized_rev: {
+                totalPct: '30',
+                details: [
+                    ['15', 'Underdækning'],
+                    ['30', 'Open balance'],
+                    ['15', 'Overdækning'],
+                    ['40', 'Invoiced'],
+                ]
+            },
+            misc: {
+                totalPct: '7',
+                details: [
+                    ['100', 'Nedskrivning på debitorer'],
+                ]
+            },
         }
     }
 }

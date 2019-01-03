@@ -41,8 +41,7 @@ const ItemWrapper = styled.div`
 
 `;
 
-const Items = ({ data2: { id, infoItem, status }, onItemSelect }) => {
-    
+const Items = ({ data: { id, infoItem, status }, onItemSelect }) => {
     let stat = status;
 
     return ( 

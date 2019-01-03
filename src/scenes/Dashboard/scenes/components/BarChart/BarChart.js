@@ -8,8 +8,9 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 35rem;
-    width: 40rem;
+    height: 100%;
+    width: 100%;
+    min-width: 50rem;
 `;
 
 class BarChart extends Component {

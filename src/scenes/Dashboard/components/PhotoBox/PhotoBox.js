@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { MdChevronRight, MdChevronLeft } from 'react-icons/md';
 
-import Contact from '../PhotoCard/index';
+import Contact from './PhotoCard/index';
 
 const WrapperPhotoBox = styled.div`
     display: flex;

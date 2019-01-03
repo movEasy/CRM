@@ -4,15 +4,14 @@ import styled from 'styled-components';
 // Import components
 import Index from './components/Box/index';
 import PieChart from './components/PieChart/PieChart';
-
-import BarChart from '../../../stories/BarChart/BarChart';
+import Barchart from './components/BarChart/BarChart';
 
 const Container = styled.div`
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding-left: ${props => props.theme.paddingContainer};
     padding-right: ${props => props.theme.paddingContainer};
+    justify-content: space-between;
     height: 50rem;
 `;
 
@@ -72,6 +71,83 @@ const data2 = {
     }
 }
 
+const data3 = {
+    cus_economy: {
+        exp: {
+            gross_rev: {
+                totalPct: '17',
+                details: [
+                    ['100', 'Provision under coverage'],
+                ]
+            },
+            rev: {
+                totalPct: '20',
+                details: [
+                    ['50', 'Ufaktureret udlæg'],
+                    ['50', 'Not invoiced'],
+                ]
+            },
+            realized_rev: {
+                totalPct: '60',
+                details: [
+                    ['10', 'Underdækning'],
+                    ['20', 'Open balance'],
+                    ['10', 'Overdækning'],
+                    ['60', 'Invoiced'],
+                ]
+            },
+            misc: {
+                totalPct: '3',
+                details: [
+                    ['100', 'Nedskrivning på debitorer'],
+                ]
+            },
+        },
+        achived: {
+            gross_rev: {
+                totalPct: '20',
+                details: [
+                    ['100', 'Provision under coverage'],
+                ]
+            },
+            rev: {
+                totalPct: '45',
+                details: [
+                    ['10', 'Ufaktureret udlæg'],
+                    ['90', 'Not invoiced'],
+                ]
+            },
+            realized_rev: {
+                totalPct: '30',
+                details: [
+                    ['15', 'Underdækning'],
+                    ['30', 'Open balance'],
+                    ['15', 'Overdækning'],
+                    ['40', 'Invoiced'],
+                ]
+            },
+            misc: {
+                totalPct: '7',
+                details: [
+                    ['100', 'Nedskrivning på debitorer'],
+                ]
+            },
+        }
+    }
+}
+
+const dataLines = [
+    ['20', 'Gross Revenue'],
+    ['45', 'Revenue'],
+    ['30', 'Realized Revenue'],
+    ['7', 'Misc.'],
+];
+
+
+const color = {
+    elementColor: ['#473698', '#460A68', '#6D2077', '#00A2A1']
+}
+
 class Main extends Component {
     state = {
         itemSelect: false,
@@ -93,7 +169,7 @@ class Main extends Component {
         return (
             <Container>
                 <ElementContainer>
-                    {/* <Index data={data} bgc='green' headers={['Service line', 'Description', 'No. projects']} /> */}
+                    <Index data={data} bgc='green' headers={['Service line', 'Description', 'No. projects']} />
                     <Index data={data2} bgc='eggplant' headers={['Deadline', 'Keyperson', 'Task']}/>
                 </ElementContainer>
                 <ElementContainer>
@@ -101,10 +177,8 @@ class Main extends Component {
                     <PieChart year='2017' />
                 </ElementContainer>
                 <ElementContainer>
-                    <PieChart year='2018' />
-                    <PieChart year='2017' />
+                    <Barchart data={data3} color={color} dataLines={dataLines} />
                 </ElementContainer>
-                {/* <BarChart /> */}
             </Container>
         )
     }

@@ -7,7 +7,7 @@ import Picture from './Picture/Picture';
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    width: 13rem;
+    width: 15rem;
     height: 20rem;
 `;
 

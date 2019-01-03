@@ -5,21 +5,15 @@ import Overview from './Overview/Overview';
 import OverviewDetails from './OverviewDetails/OverviewDetails';
 
 const WrapperMain = styled.div`
-    /* width: 45rem;
-    height: 23rem; */
     width: 100%;
     max-height: 50%;
-    min-width: 35rem;
+    min-width: 45rem;
     min-height: 20rem;
     border-radius: 0.4rem;
     overflow: hidden;
     border: 0.06rem solid black;
 
     background-color: white;
-
-    /* &:first-child {
-        margin-bottom: 2rem;
-    } */
 `;
 
 const Header = styled.div`
@@ -115,7 +109,7 @@ class Main extends Component {
                     <Header>
                         {headers.map(el => <h2>{el}</h2>)}
                     </Header>
-                    <Overview data={ { departments: departments} } onItemSelect={(id) => this.handleDepartmentSelect(id)} />
+                    <Overview data={ { departments } } onItemSelect={(id) => this.handleDepartmentSelect(id)} />
                 </WrapperMain>
             )
         }

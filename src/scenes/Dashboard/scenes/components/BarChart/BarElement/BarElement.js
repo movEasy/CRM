@@ -35,7 +35,10 @@ const El = styled.div`
     p {
         margin: 0;
         line-break: strict;
-        font-size: ${ props => props.text && '0.8rem'};
+        font-size: ${ props => 
+            ( props.text && '0.9rem' )
+            || ( props.pct && '1rem' )
+        };
     }
 `;
 
@@ -65,7 +68,7 @@ const BarElement = ({ data, color }) => {
     return ( 
         <Bar height={data.totalPct}>
             { Object.values(data).map( (el, i) => i !== 1 ? 
-                <El className='left-row' bgc={i} width='small' color={color} > <p> {el}% </p> </El> :
+                <El pct className='left-row' bgc={i} width='small' color={color} > <p> {el}% </p> </El> :
                 <El text width='large' bgc={i} color={color} borderColor={color} > <ElInner>{el.map((elInner) => <DetailedParagraph borderColor={color} height={elInner[0]}><p>{elInner[1]}</p></DetailedParagraph>)}</ElInner> </El>
             )}
         </Bar>

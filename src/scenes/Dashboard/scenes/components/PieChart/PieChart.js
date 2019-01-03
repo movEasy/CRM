@@ -10,7 +10,6 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     height: 100%;
 
     h4 {
@@ -28,8 +27,8 @@ class PC extends Component {
         return (
             <Wrapper>
             <h4>{`Bruttoomsætning ${year}`}</h4>
-                <PieChart width={500} height={250}>
-                    <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={90}>
+                <PieChart width={200} height={250}>
+                    <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80}>
                         {
                             data01.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={colors[index]} />

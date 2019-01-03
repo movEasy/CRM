@@ -22,7 +22,7 @@ const InfoWrapper = styled.div`
 
     p {
         margin: 0;
-        font-size: 1rem;
+        font-size: 0.8rem;
         padding: 0 0 0.2rem 0.9rem;
     }
 `;
@@ -34,7 +34,7 @@ const Info = ({ data }) => {
         <InfoWrapper>
             <p>{data.name}</p>
             <p>{data.company}</p>
-            <p>{data.position}</p> < br />
+            <p>{data.position}</p>
             <p>{data.tel}</p>
             <p>{data.mail}</p>
         </InfoWrapper>

@@ -6,8 +6,8 @@ import BarElement from '../BarElement/BarElement';
 const ChartWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    height: 30rem;
-    width: 15rem;
+    height: 100%;
+    width: 35%;
 
     .left-row:nth-child(1n) {
         border-top: 1px solid transparent;
