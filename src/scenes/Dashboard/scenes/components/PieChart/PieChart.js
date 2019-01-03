@@ -22,11 +22,11 @@ class PC extends Component {
      }
 
     render() { 
-        console.log(window.innerWidth)
+
         const { year } = this.props;
         return (
             <Wrapper>
-            <h4>{`Bruttoomsætning ${year}`}</h4>
+            {/* <h4>{`Bruttoomsætning ${year}`}</h4>
                 <PieChart width={200} height={250}>
                     <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80}>
                         {
@@ -37,7 +37,7 @@ class PC extends Component {
                     </Pie>
                     <Pie dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
                     <Tooltip/>
-                </PieChart>
+                </PieChart> */}
             </Wrapper> 
         );
     }

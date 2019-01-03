@@ -20,7 +20,7 @@ const Chart = ({ data, color }) => {
 
     return ( 
         <ChartWrapper>
-            {Object.values(data).map((el, i) => <BarElement data={el} color={elementColor[i]} />)}
+            {Object.keys(data).map((el, i) => <BarElement data={data[el]} color={elementColor[i]} />)}
         </ChartWrapper>
      );
 }

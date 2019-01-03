@@ -14,8 +14,6 @@ const BarLineWrapper = ({ data, color }) => {
 
     const { ...elementColor } = color
 
-    console.log(data)
-
     return ( 
         <Wrapper>
             {data.map((el, i) => <BarLine data={el} color={elementColor[i]} />)}

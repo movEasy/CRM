@@ -18,10 +18,9 @@ const WrapperDepartment = styled.div`
 `;
 
 const Overview = ({ data: { departments }, onItemSelect}) => {
-    console.log(Object.values(departments));
     return ( 
         <WrapperDepartment>
-            {Object.values(departments).map(el => <Items key={Math.random()} onItemSelect={(id) => onItemSelect (id)} data={{ id: el.id, infoItem: el.infoItem }} />)}
+            {Object.keys(departments).map(el => <Items key={Math.random()} onItemSelect={(id) => onItemSelect (id)} data={{ id: departments[el].id, infoItem: departments[el].infoItem }} />)}
         </WrapperDepartment>
      );
 }

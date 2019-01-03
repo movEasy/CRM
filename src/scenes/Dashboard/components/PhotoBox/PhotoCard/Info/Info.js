@@ -28,7 +28,6 @@ const InfoWrapper = styled.div`
 `;
 
 const Info = ({ data }) => {
-    console.log(data);
     
     return ( 
         <InfoWrapper>

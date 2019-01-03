@@ -26,7 +26,7 @@ const BarLineEl = styled.div`
 `;
 
 const BarLine = ({ data, color }) => {
-    console.log(data)
+
     return ( 
         <BarLineEl height={data[0]}>
             <div color={color} ><p>{data[1]}</p></div>

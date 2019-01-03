@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Bar = styled.div`
     display: flex;
@@ -63,16 +64,23 @@ const DetailedParagraph = styled.div`
     align-items: center;
 `;
 
-const BarElement = ({ data, color }) => {
-    console.log(data);
+const BarElement = (props) => {
     return ( 
-        <Bar height={data.totalPct}>
-            { Object.values(data).map( (el, i) => i !== 1 ? 
-                <El pct className='left-row' bgc={i} width='small' color={color} > <p> {el}% </p> </El> :
-                <El text width='large' bgc={i} color={color} borderColor={color} > <ElInner>{el.map((elInner) => <DetailedParagraph borderColor={color} height={elInner[0]}><p>{elInner[1]}</p></DetailedParagraph>)}</ElInner> </El>
+        <Bar height={props.data.totalPct}>
+            { Object.keys(props.data).map( (el, i) => i !== 1 ? 
+                <El pct className='left-row' bgc={i} width='small' color={props.color} > <p> {props.data[el]}% </p> </El> :
+                <El text width='large' bgc={i} color={props.color} borderColor={props.color} > <ElInner>{props.data[el].map((elInner) => <DetailedParagraph borderColor={props.color} height={elInner[0]}><p>{elInner[1]}</p></DetailedParagraph>)}</ElInner> </El>
             )}
         </Bar>
      );
+}
+
+BarElement.propTypes = {
+    data: PropTypes.shape({
+        totalPct: PropTypes.string,
+        details: PropTypes.array
+    }),
+    color: PropTypes.string
 }
  
 export default BarElement;
