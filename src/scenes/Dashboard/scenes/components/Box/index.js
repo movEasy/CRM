@@ -57,10 +57,10 @@ const ButtonWrapper =styled.div`
     height: 4rem;
 
     button {
-        text-align: center;
+        text-align: right;
         cursor: pointer;
         height: 3rem;
-        width: 14rem;
+        width: 20rem;
         color: white;
         background-color: white;
         color: #0091DA;

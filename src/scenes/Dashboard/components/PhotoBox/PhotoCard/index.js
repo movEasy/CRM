@@ -7,8 +7,8 @@ import Picture from './Picture/Picture';
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    width: 15rem;
-    height: 100%;
+    width: 16rem;
+    height: 23rem;
 `;
 
 class Contact extends Component {

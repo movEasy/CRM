@@ -20,7 +20,7 @@ const ItemWrapper = styled.div`
     min-height: 4rem;
 
     :hover {
-        color: blueviolet;
+        color: ${props => props.theme.lightBlue};
     }
 
     font-size: 1rem;
@@ -82,7 +82,7 @@ const ItemWrapperDepartments = styled.div`
     min-height: 4rem;
 
     :hover {
-        color: blueviolet;
+        color: ${props => props.theme.lightBlue};
     }
 
     font-size: 1rem;

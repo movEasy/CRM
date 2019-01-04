@@ -12,14 +12,25 @@ const WrapperPhotoBox = styled.div`
     margin-top: 1.5rem;
     min-width: 100%;
     min-height: 25rem;
-    svg {
+    padding-left: ${props => props.theme.paddingContainer};
+    padding-right: ${props => props.theme.paddingContainer};
+    
+
+
+    button.left {
         cursor: pointer;
+        position: absolute;
+        left: 2rem;
+        width: 5rem;
+        height: 5rem;
     }
 
-    button {
-        border: none;
-        background-color: transparent;
-        font-size: 2rem;
+    button.right {
+        cursor: pointer;
+        position: absolute;
+        right: 2rem;
+        width: 5rem;
+        height: 5rem;
     }
 `;
 
@@ -55,11 +66,11 @@ class PhotoBox extends Component {
 
         let slicedData = _.values(data).slice(start, end);
         
-        return ( 
+        return (
             <WrapperPhotoBox>
-                <button value='back' name='back' onClick={this.handlePhotoEnd}> back </button>
+                <button className='left' value='back' name='back' onClick={this.handlePhotoEnd}> i </button>
                 { Object.keys(slicedData).map( val => <Contact key={Math.random()} data={ { person: slicedData[val] } } />)}
-                <button value='next' name='next' onClick={this.handlePhotoEnd}> next </button>
+                <button className='right' value='next' name='next' onClick={this.handlePhotoEnd}> i </button>
             </WrapperPhotoBox>
          );
     }

@@ -16,6 +16,38 @@ const Wrapper = styled.div`
         margin: 0;
     }
 `;
+
+// const Legends = styled.div`
+//     display: flex;
+//     justify-content: space-evenly;
+//     width: 100%;
+//     min-height: 2rem;
+
+//     div {
+//         display: flex;
+//         align-items: center;
+
+//         p {
+//         margin: 0;
+//         font-size: 1rem;
+//         padding-left: 0.5rem;
+//     }
+//     }
+// `;
+
+// const InnerCircle = styled.div`
+//     width: 1rem;
+//     height: 1rem;
+//     color: black;
+//     background-color: ${ props => 
+//         (props.turquoise && '#00A2A1')
+//         || (props.darkBlue && props.theme.darkBlue)
+//         || (props.eggplant && props.theme.eggplant)
+//         || (props.purple && props.theme.purple)
+//     };
+//     border-radius: 2rem;
+// `;
+
 class PC extends Component {
     state = { 
 
@@ -26,9 +58,12 @@ class PC extends Component {
         const { year } = this.props;
         return (
             <Wrapper>
-            <h4>{`Bruttoomsætning ${year}`}</h4>
-                <PieChart width={200} height={250}>
-                    <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80}>
+            {/* <h4>{`Bruttoomsætning ${year}`}</h4> */}
+                <PieChart width={200} height={200}>
+                <text x={100} y={90} textAnchor="middle" dominantBaseline="middle">
+                    {`${year}`}
+                </text>
+                    <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="45%" outerRadius={80} innerRadius={60}>
                         {
                             data01.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={colors[index]} />

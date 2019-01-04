@@ -24,6 +24,45 @@ const ElementContainer = styled.div`
     margin-top: 1.5rem;
 `;
 
+const Dashboard = styled.div`
+        
+    h2 {
+        margin: 0;
+        color: ${props => props.theme.lightBlue};
+    }
+`;
+
+const Legends = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 2rem;
+
+    div {
+        display: flex;
+        align-items: center;
+
+        p {
+        margin: 0;
+        font-size: 1rem;
+        padding-left: 0.5rem;
+    }
+    }
+`;
+
+const InnerCircle = styled.div`
+    width: 1rem;
+    height: 1rem;
+    color: black;
+    background-color: ${ props => 
+        (props.turquoise && '#00A2A1')
+        || (props.darkBlue && props.theme.darkBlue)
+        || (props.eggplant && props.theme.eggplant)
+        || (props.purple && props.theme.purple)
+    };
+    border-radius: 2rem;
+`;
+
 const data = {
     departments:  {
         department1:{
@@ -215,6 +254,15 @@ class Main extends Component {
                     <Index data={tasksData} styleHack='tasks' bgc='eggplant' headers={['Deadline', 'Keyperson', 'Task']}/>
                 </ElementContainer>
                 <ElementContainer>
+                <Dashboard>
+                    <h2>360 DASHBOARD</h2>
+                    <Legends>
+                        <div><InnerCircle turquoise /><p>CIT</p></div>
+                        <div><InnerCircle darkBlue /><p>TP</p></div>
+                        <div><InnerCircle eggplant /><p>INDIRECT</p></div>
+                        <div><InnerCircle purple /><p>MPS</p></div>
+                    </Legends>
+                </Dashboard>
                     <PieChart year='2018' />
                     <PieChart year='2017' />
                 </ElementContainer>
