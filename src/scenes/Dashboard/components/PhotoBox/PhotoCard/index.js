@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 15rem;
-    height: 20rem;
+    height: 100%;
 `;
 
 class Contact extends Component {

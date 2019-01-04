@@ -11,8 +11,7 @@ const WrapperPhotoBox = styled.div`
     align-items: center;
     margin-top: 1.5rem;
     min-width: 100%;
-    min-height: 100%;
-
+    min-height: 25rem;
     svg {
         cursor: pointer;
     }

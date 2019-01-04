@@ -7,11 +7,10 @@ import OverviewDetails from './OverviewDetails/OverviewDetails';
 const WrapperMain = styled.div`
     width: 100%;
     max-height: 50%;
-    min-width: 45rem;
+    min-width: 60rem;
     min-height: 20rem;
     border-radius: 0.4rem;
     overflow: hidden;
-    border: 0.06rem solid black;
 
     background-color: white;
 `;
@@ -33,12 +32,40 @@ const Header = styled.div`
         font-size: 1rem;
     }
 
+    h2:nth-child(2) {
+        flex: 1;
+    }
+
     h2:first-child {
         padding-left: 1rem;
+        flex: 1;
     }
 
     h2:last-child {
         padding-right: 1rem;
+        flex: 1;
+    }
+`;
+
+const ButtonWrapper =styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    height: 4rem;
+
+    button {
+        text-align: center;
+        cursor: pointer;
+        height: 3rem;
+        width: 14rem;
+        color: white;
+        background-color: white;
+        color: #0091DA;
+        border: none;
+        font-weight: 800;
     }
 `;
 
@@ -59,7 +86,6 @@ class Main extends Component {
      }
 
     handleDepartmentSelect = (id) => {
-        console.log(id)
         this.setState( prevState =>({
             departmentSelected: !prevState.departmentSelected,
             id
@@ -74,15 +100,15 @@ class Main extends Component {
     }
 
     render() { 
-        const { departments } = this.props.data;
+        // const { departments } = this.props.data;
         const { headers, bgc } = this.props;
         const { departmentSelected, id } = this.state;
-
+        
         let dataDetails;
 
         switch ( id ) {
             case '1':
-                dataDetails = departments.department1.details;
+                dataDetails = this.props.data.department1.details;
                 break;
             case '2': 
                 dataDetails = id2;
@@ -109,7 +135,10 @@ class Main extends Component {
                     <Header>
                         {headers.map(el => <h2>{el}</h2>)}
                     </Header>
-                    <Overview data={ { departments } } onItemSelect={(id) => this.handleDepartmentSelect(id)} />
+                    <Overview data={ this.props.data } styleHack={this.props.styleHack} onItemSelect={(id) => this.handleDepartmentSelect(id)} />
+                    {this.props.styleHack === 'tasks' ? <ButtonWrapper>
+                        <button>+ Create new task</button>
+                    </ButtonWrapper> : ''}
                 </WrapperMain>
             )
         }
