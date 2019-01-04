@@ -43,14 +43,17 @@ const ItemWrapper = styled.div`
 
     span {
         max-height: 6rem;
-
         p {
             margin: 0;
+            padding-left: 0.1rem;
+            padding-top: 0.1rem;
         }
     }
 
     span:nth-child(1) {
         flex: 1;
+        display: flex;
+        align-items: center;
     }
 
     span:nth-child(2) {
@@ -136,7 +139,7 @@ const Items = (props) => {
         item = (
         <ItemWrapper key={Math.random()} onClick={() => props.onItemSelect(id)}>
             { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
-                    <span><MdCheckCircle className='not-complete'/>{el}</span> :
+                    <span><MdCheckCircle className='not-complete'/><p>{el}</p></span> :
                 i === 0 && status === 'complete' ?
                     <span> <MdCheckCircle className='complete' />{el}</span> :
                     <span><p>{el}</p></span>)}

@@ -15,7 +15,7 @@ const WrapperDepartment = styled.div`
     overflow-y: scroll;
 
     div:nth-child(even) {
-        background-color: lightgray;
+        background-color: #ededea;
     }
 `;
 

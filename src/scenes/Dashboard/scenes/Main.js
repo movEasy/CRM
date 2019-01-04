@@ -88,7 +88,7 @@ const data = {
     },
     tasks:  {
         task1:{
-            id: '1', 
+            id: '2', 
             infoItem: ['31-2012-2018', 'HL', 'Ryk falk for om vi skal lave et TP review(...)'],
             status: 'notComplete',
             details: [
