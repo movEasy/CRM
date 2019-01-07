@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
 import { MdChevronRight, MdChevronLeft } from 'react-icons/md';
+import Img1 from './img/symbol2.png';
+import Img2 from './img/symbol1.png';
 
 import Contact from './PhotoCard/index';
 
@@ -15,22 +17,28 @@ const WrapperPhotoBox = styled.div`
     padding-left: ${props => props.theme.paddingContainer};
     padding-right: ${props => props.theme.paddingContainer};
     
-
-
-    button.left {
+    svg {
         cursor: pointer;
-        position: absolute;
-        left: 2rem;
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 3rem;
     }
 
-    button.right {
+
+    img.left {
         cursor: pointer;
         position: absolute;
-        right: 2rem;
-        width: 5rem;
-        height: 5rem;
+        left: 5rem;
+        width: 2rem;
+        height: 2rem;
+        
+    }
+
+    img.right {
+        cursor: pointer;
+        position: absolute;
+        right: 5rem;
+        width: 2rem;
+        height: 2rem;
     }
 `;
 
@@ -42,6 +50,7 @@ class PhotoBox extends Component {
     }
 
     handlePhotoEnd = (e) => {
+        console.log(e.target.name)
         const name = e.target.name;
 
         const photoArrLength = _.values(this.props.data).length;
@@ -68,9 +77,11 @@ class PhotoBox extends Component {
         
         return (
             <WrapperPhotoBox>
-                <button className='left' value='back' name='back' onClick={this.handlePhotoEnd}> i </button>
+                {/* <button className='left' value='back' name='back' onClick={this.handlePhotoEnd}> i </button> */}
+                <img className='left' src={Img2} alt='back' value='back' name='back' onClick={this.handlePhotoEnd} />
                 { Object.keys(slicedData).map( val => <Contact key={Math.random()} data={ { person: slicedData[val] } } />)}
-                <button className='right' value='next' name='next' onClick={this.handlePhotoEnd}> i </button>
+                <img className='right' src={Img1} alt='next' value='next' name='next' onClick={this.handlePhotoEnd} />
+                {/* <button className='right' value='next' name='next' onClick={this.handlePhotoEnd}> </button> */}
             </WrapperPhotoBox>
          );
     }
