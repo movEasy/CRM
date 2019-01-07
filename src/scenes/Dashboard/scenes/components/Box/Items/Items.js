@@ -16,8 +16,8 @@ const ItemWrapper = styled.div`
     margin-right: 1rem;
 
     flex: 1 1 auto;
-    max-height: 6rem;
-    min-height: 4rem;
+    height: 6rem;
+    /* min-height: 4rem; */
 
     :hover {
         color: ${props => props.theme.lightBlue};
@@ -209,10 +209,10 @@ class Items extends Component {
                         onMouseLeave={this.handleMouseOut}
                     >
                         { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
-                                <span><MdCheckCircle className='not-complete'/><p>{el}</p></span> :
+                                <span keys={Math.random()}><MdCheckCircle className='not-complete'/><p>{el}</p></span> :
                             i === 0 && status === 'complete' ?
-                                <span> <MdCheckCircle className='complete' />{el}</span> :
-                                <span><p>{el}</p></span>)}
+                                <span keys={Math.random()}> <MdCheckCircle className='complete' />{el}</span> :
+                                <span keys={Math.random()}><p>{el}</p></span>)}
                     </ItemWrapper>
                     
                 </>

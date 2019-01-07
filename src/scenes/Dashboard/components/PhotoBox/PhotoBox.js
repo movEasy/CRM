@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
 import { MdChevronRight, MdChevronLeft } from 'react-icons/md';
-import Img1 from './img/symbol2.png';
-import Img2 from './img/symbol1.png';
+import Img1 from './img/symbol1.png';
+import Img2 from './img/symbol2.png';
 
 import Contact from './PhotoCard/index';
 
@@ -12,7 +12,7 @@ const WrapperPhotoBox = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 1.5rem;
-    min-width: 100%;
+    width: 100%;
     min-height: 25rem;
     padding-left: ${props => props.theme.paddingContainer};
     padding-right: ${props => props.theme.paddingContainer};
@@ -78,9 +78,9 @@ class PhotoBox extends Component {
         return (
             <WrapperPhotoBox>
                 {/* <button className='left' value='back' name='back' onClick={this.handlePhotoEnd}> i </button> */}
-                <img className='left' src={Img2} alt='back' value='back' name='back' onClick={this.handlePhotoEnd} />
+                <img className='left' src={Img1} alt='back' value='back' name='back' onClick={this.handlePhotoEnd} />
                 { Object.keys(slicedData).map( val => <Contact key={Math.random()} data={ { person: slicedData[val] } } />)}
-                <img className='right' src={Img1} alt='next' value='next' name='next' onClick={this.handlePhotoEnd} />
+                <img className='right' src={Img2} alt='next' value='next' name='next' onClick={this.handlePhotoEnd} />
                 {/* <button className='right' value='next' name='next' onClick={this.handlePhotoEnd}> </button> */}
             </WrapperPhotoBox>
          );
