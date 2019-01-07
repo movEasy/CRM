@@ -31,7 +31,7 @@ const OverviewDetails = ({ data: { details }, returnIndex }) => {
             <div className='button__wrapper'>
                 <MdKeyboardReturn onClick={returnIndex} />
             </div>
-            { Object.keys(details).map(el => <ItemDetails data={ {id: '1', item: details[el]} } />)}
+            { Object.keys(details).map(el => <ItemDetails keys={Math.random()} data={ {id: '1', item: details[el]} } />)}
         </WrapperDetails>
      );
 }

@@ -5,56 +5,56 @@ import PhotoBox from './PhotoBox'
 
 export const data = {
     person1: {
-        name: 'arnø 1',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',
         mail: 'jesper.arno@kpmg.com'
     },
     person2: {
-        name: 'arnø 2',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',
         mail: 'jesper.arno@kpmg.com'
     },
     person3: {
-        name: 'arnø 3',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',
         mail: 'jesper.arno@kpmg.com'
     },
     person4: {
-        name: 'arnø 4',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',
         mail: 'jesper.arno@kpmg.com'
     },
     person5: {
-        name: 'arnø 5',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',
         mail: 'jesper.arno@kpmg.com'
     },
     person6: {
-        name: 'arnø 6',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',
         mail: 'jesper.arno@kpmg.com'
     },
     person7: {
-        name: 'Arnø7',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',
         mail: 'jesper.arno@kpmg.com'
     },
     person8: {
-        name: 'Arnø 8',
+        name: 'Jesper Arnø',
         company: 'KPMG Acor Tax',
         position: 'Partner',
         tel: '+45 12 34 56 78',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MdCheckCircle } from 'react-icons/md';
@@ -121,36 +121,189 @@ const ItemWrapperDepartments = styled.div`
 
 `;
 
-const Items = (props) => {
-    const { id, infoItem, status } = props.data;
+const HoverTask = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    background-color: white !important;
+    border: 1px solid black;
+    width: 50rem;
+    height: 30rem;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
-    let item;
-    if ( props.styleHack === 'departments' ) {
-        item = (
-        <ItemWrapperDepartments key={Math.random()} onClick={() => props.onItemSelect(id)}>
-            { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
-                    <span><MdCheckCircle className='not-complete'/>{el}</span> :
-                i === 0 && status === 'complete' ?
-                    <span> <MdCheckCircle className='complete' />{el}</span> :
-                    <span><p>{el}</p></span>)}
-        </ItemWrapperDepartments>
-        )
-    } else {
-        item = (
-        <ItemWrapper key={Math.random()} onClick={() => props.onItemSelect(id)}>
-            { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
-                    <span><MdCheckCircle className='not-complete'/><p>{el}</p></span> :
-                i === 0 && status === 'complete' ?
-                    <span> <MdCheckCircle className='complete' />{el}</span> :
-                    <span><p>{el}</p></span>)}
-        </ItemWrapper>
-        )
+    h3 {
+        color: ${ props => props.theme.darkBlue };
+        margin: 0;
     }
 
-    return ( 
-        item
-     );
+    div.task-hover__date-and-person {
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+        background-color: white !important;
+    }
+
+    div.task-hover__text-area {
+        width: 100%;
+        height: 50%;
+        background-color: white !important;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    div.task-hover__submit {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        background-color: white !important;
+    }
+`;
+
+
+class Items extends Component {
+    state = { 
+        isHovering: false,
+    }
+
+    handleMouseOver = (e) => {
+        console.log(this.state.isHovering)
+        this.setState({
+            isHovering: true,
+        });
+    }
+
+    handleMouseOut = () => {
+        this.setState({
+            isHovering: false,
+        });
+    }
+
+    render() {
+        const { id, infoItem, status } = this.props.data;
+
+        let item;
+        if ( this.props.styleHack === 'departments' ) {
+            item = (
+            <ItemWrapperDepartments key={Math.random()} onClick={() => this.props.onItemSelect(id)}>
+                { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
+                        <span keys={Math.random()}><MdCheckCircle className='not-complete'/>{el}</span> :
+                    i === 0 && status === 'complete' ?
+                        <span keys={Math.random()}> <MdCheckCircle className='complete' />{el}</span> :
+                        <span keys={Math.random()}><p>{el}</p></span>)}
+            </ItemWrapperDepartments>
+            )
+        } else {
+            item = (
+                <>
+                    <ItemWrapper key={Math.random()}
+                        onMouseEnter={this.handleMouseOver}
+                        onMouseLeave={this.handleMouseOut}
+                    >
+                        { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
+                                <span><MdCheckCircle className='not-complete'/><p>{el}</p></span> :
+                            i === 0 && status === 'complete' ?
+                                <span> <MdCheckCircle className='complete' />{el}</span> :
+                                <span><p>{el}</p></span>)}
+                    </ItemWrapper>
+                    
+                </>
+            )
+        }
+
+        return ( 
+            <>
+                {item}
+                {this.state.isHovering ? 
+                        <HoverTask>
+                            <h3>Ryk Flack for om vi skal lave et TP Review</h3>
+                            <div className="task-hover__date-and-person">
+                                <span>
+                                    <p>Deadline: 31-12-2019</p>
+                                </span>
+                                <span>
+                                    <p>Oprettet af: Henrik Lund</p>
+                                </span>
+                            </div>
+                            <div className='task-hover__text-area'>
+                                <textarea />
+                            </div>
+                            <div className='task-hover__submit'>
+                                <button>Fuldført</button>
+                            </div>
+                        </HoverTask> : 
+                        null
+                    }
+            </>
+        );
+    }
 }
+ 
+// export default Items; 
+
+// Items = (props) => {
+//     const { id, infoItem, status } = props.data;
+
+//     let item;
+//     if ( props.styleHack === 'departments' ) {
+//         item = (
+//         <ItemWrapperDepartments key={Math.random()} onClick={() => props.onItemSelect(id)}>
+//             { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
+//                     <span><MdCheckCircle className='not-complete'/>{el}</span> :
+//                 i === 0 && status === 'complete' ?
+//                     <span> <MdCheckCircle className='complete' />{el}</span> :
+//                     <span><p>{el}</p></span>)}
+//         </ItemWrapperDepartments>
+//         )
+//     } else {
+//         item = (
+//             <>
+//                 <ItemWrapper key={Math.random()}
+//                     onMouseEnter={props.onMouseEnterHandler}
+//                     onMouseLeave={props.onMouseLeaveHandler}
+//                 >
+//                     { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
+//                             <span><MdCheckCircle className='not-complete'/><p>{el}</p></span> :
+//                         i === 0 && status === 'complete' ?
+//                             <span> <MdCheckCircle className='complete' />{el}</span> :
+//                             <span><p>{el}</p></span>)}
+//                 </ItemWrapper>
+//                 {props.isHover ? 
+//                     <HoverTask>
+//                         <h3>Ryk Flack for om vi skal lave et TP Review</h3>
+//                         <div className="task-hover__date-and-person">
+//                             <div>
+//                                 <p>Deadline: 31-12-2019</p>
+//                             </div>
+//                             <div>
+//                                 <p>Oprettet af: Henrik Lund</p>
+//                             </div>
+//                         </div>
+//                         <div className='task-hover__text-area'>
+//                             <textarea />
+//                         </div>
+//                         <div className='task-hover__submit'>
+//                             <button>Fuldført</button>
+//                         </div>
+//                     </HoverTask> : 
+//                     null
+//                 }
+//             </>
+//         )
+//     }
+
+//     return ( 
+//         item
+//      );
+// }
 
 Items.propTypes = {
 

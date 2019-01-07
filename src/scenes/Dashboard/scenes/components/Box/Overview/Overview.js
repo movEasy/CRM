@@ -24,16 +24,17 @@ const Overview = (props) => {
     return ( 
         <WrapperDepartment>
             {_.values(props.data).map(el => 
-                <Items key={Math.random()} onItemSelect={(id) => props.onItemSelect (id)} 
+                <Items 
+                    key={Math.random()} 
+                    onItemSelect={(id) => props.onItemSelect (id)}
                     data={{ id: el.id, infoItem: el.infoItem, status: el.status }}
                     styleHack={props.styleHack}
+                    isHover={props.isHover}
                 />
             )}
         </WrapperDepartment>
-        // wrapDepartment
      );
 }
  
-// { data: { tasks }, onItemSelect}
 
 export default Overview;

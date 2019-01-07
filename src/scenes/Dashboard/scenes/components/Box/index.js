@@ -82,7 +82,7 @@ const id3 = [
 class Main extends Component {
     state = { 
         departmentSelected: false,
-        id: ''
+        id: '',
      }
 
     handleDepartmentSelect = (id) => {
@@ -101,7 +101,7 @@ class Main extends Component {
 
     render() { 
         // const { departments } = this.props.data;
-        const { headers, bgc } = this.props;
+        const { headers } = this.props;
         const { departmentSelected, id } = this.state;
         
         let dataDetails;
@@ -133,9 +133,12 @@ class Main extends Component {
             (
                 <WrapperMain>
                     <Header>
-                        {headers.map(el => <h2>{el}</h2>)}
+                        {headers.map(el => <h2 keys={Math.random()}>{el}</h2>)}
                     </Header>
-                    <Overview data={ this.props.data } styleHack={this.props.styleHack} onItemSelect={(id) => this.handleDepartmentSelect(id)} />
+                    <Overview data={ this.props.data } 
+                        styleHack={this.props.styleHack} 
+                        onItemSelect={(id) => this.handleDepartmentSelect(id)}
+                    />
                     {this.props.styleHack === 'tasks' ? <ButtonWrapper>
                         <button>+ Create new task</button>
                     </ButtonWrapper> : ''}

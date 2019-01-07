@@ -5,8 +5,9 @@ const InfoWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 50%;
+    height: 40%;
     background-color: white;
+    line-height: 1rem;
 
     p:first-child {
         font-size: 1.2rem;

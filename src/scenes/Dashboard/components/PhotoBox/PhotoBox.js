@@ -38,7 +38,7 @@ class PhotoBox extends Component {
     
     state = {  
         start: 0,
-        end: 5
+        end: 6
     }
 
     handlePhotoEnd = (e) => {
