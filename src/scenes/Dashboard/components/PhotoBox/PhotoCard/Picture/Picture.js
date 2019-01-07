@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Img1 from './images/pic1.JPG';
 import Img2 from './images/pic2.jpg';
 
 const PictureWrapper = styled.div`
@@ -17,7 +16,7 @@ const PictureWrapper = styled.div`
 const Picture = () => {
     return ( 
         <PictureWrapper>
-            <img src={Math.random() >= 0.50 ? Img1 : Img2} alt="test"/>
+            <img src={Img2} alt="test"/>
         </PictureWrapper>
      );
 }
