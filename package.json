@@ -14,9 +14,7 @@
     "react-dom": "^16.6.3",
     "react-icons": "^3.2.2",
     "react-scripts": "^2.1.2",
-    "recharts": "^1.4.2",
-    "styled-components": "^4.1.2",
-    "victory": "^31.0.2"
+    "styled-components": "^4.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,7 +38,6 @@
     "@storybook/addon-actions": "^4.1.1",
     "@storybook/addon-links": "^4.1.1",
     "@storybook/addons": "^4.1.1",
-    "@storybook/react": "^4.1.1",
-    "babel-loader": "^8.0.4"
+    "@storybook/react": "^4.1.1"
   }
 }

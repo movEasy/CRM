@@ -82,7 +82,7 @@ class ItemDetails extends Component {
     }
 
     handleMouseOver = (e) => {
-        console.log(e)
+
         this.setState({
             isHovering: true,
         });
@@ -96,7 +96,7 @@ class ItemDetails extends Component {
 
     render() { 
         const { id, item } = this.props.data;
-        console.log(`This is the console.log: ${this.state.isHovering}`)
+
         return (
             <>
             <ItemDetailsWrapper key={id} onMouseEnter={(key) => this.handleMouseOver(key)} onMouseLeave={this.handleMouseOut}>

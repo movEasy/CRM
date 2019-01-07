@@ -29,7 +29,6 @@ const Overview = (props) => {
                     onItemSelect={(id) => props.onItemSelect (id)}
                     data={{ id: el.id, infoItem: el.infoItem, status: el.status }}
                     styleHack={props.styleHack}
-                    isHover={props.isHover}
                 />
             )}
         </WrapperDepartment>

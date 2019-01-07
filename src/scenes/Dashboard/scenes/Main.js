@@ -34,7 +34,7 @@ const Dashboard = styled.div`
 
 const Legends = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     min-height: 2rem;
 
@@ -254,15 +254,15 @@ class Main extends Component {
                     <Index data={tasksData} styleHack='tasks' bgc='eggplant' headers={['Deadline', 'Keyperson', 'Task']}/>
                 </ElementContainer>
                 <ElementContainer>
-                <Dashboard>
-                    <h2>360 DASHBOARD</h2>
-                    <Legends>
-                        <div><InnerCircle turquoise /><p>CIT</p></div>
-                        <div><InnerCircle darkBlue /><p>TP</p></div>
-                        <div><InnerCircle eggplant /><p>INDIRECT</p></div>
-                        <div><InnerCircle purple /><p>MPS</p></div>
-                    </Legends>
-                </Dashboard>
+                    <Dashboard>
+                        <h2>360 DASHBOARD</h2>
+                        <Legends>
+                            <div><InnerCircle turquoise /><p>CIT</p></div>
+                            <div><InnerCircle darkBlue /><p>TP</p></div>
+                            <div><InnerCircle eggplant /><p>INDIRECT</p></div>
+                            <div><InnerCircle purple /><p>MPS</p></div>
+                        </Legends>
+                    </Dashboard>
                     <PieChart year='2018' />
                     <PieChart year='2017' />
                 </ElementContainer>

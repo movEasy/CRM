@@ -175,13 +175,14 @@ class Items extends Component {
     }
 
     handleMouseOver = (e) => {
-        console.log(this.state.isHovering)
+        console.log(`This is handleMouseOver: ${this.state.isHovering}`)
         this.setState({
             isHovering: true,
         });
     }
 
     handleMouseOut = () => {
+        console.log('Mouse leeeeaving')
         this.setState({
             isHovering: false,
         });
@@ -205,7 +206,7 @@ class Items extends Component {
             item = (
                 <>
                     <ItemWrapper key={Math.random()}
-                        onMouseEnter={this.handleMouseOver}
+                        onMouseEnter={(e) => this.handleMouseOver(e)}
                         onMouseLeave={this.handleMouseOut}
                     >
                         { infoItem.map((el, i) => i === 0 && status === 'notComplete' ? 
@@ -214,16 +215,8 @@ class Items extends Component {
                                 <span keys={Math.random()}> <MdCheckCircle className='complete' />{el}</span> :
                                 <span keys={Math.random()}><p>{el}</p></span>)}
                     </ItemWrapper>
-                    
-                </>
-            )
-        }
-
-        return ( 
-            <>
-                {item}
-                {this.state.isHovering ? 
-                        <HoverTask>
+                    {this.state.isHovering &&
+                        <HoverTask key={Math.random()}>
                             <h3>Ryk Flack for om vi skal lave et TP Review</h3>
                             <div className="task-hover__date-and-person">
                                 <span>
@@ -239,9 +232,16 @@ class Items extends Component {
                             <div className='task-hover__submit'>
                                 <button>Fuldført</button>
                             </div>
-                        </HoverTask> : 
-                        null
+                        </HoverTask>
                     }
+                </>
+            )
+        }
+
+        return ( 
+            <>
+                {item}
+                
             </>
         );
     }

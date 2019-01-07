@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { PieChart, Pie, Tooltip, Cell } from 'recharts';
 import styled from 'styled-components';
 import { Doughnut } from 'react-chartjs-2';
 
