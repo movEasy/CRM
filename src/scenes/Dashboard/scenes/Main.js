@@ -54,10 +54,10 @@ const InnerCircle = styled.div`
     height: 1rem;
     color: black;
     background-color: ${ props => 
-        (props.turquoise && '#00A2A1')
-        || (props.darkBlue && props.theme.darkBlue)
-        || (props.eggplant && props.theme.eggplant)
-        || (props.purple && props.theme.purple)
+        (props.turquoise && '#F2D076')
+        || (props.darkBlue && '#2E9AD8')
+        || (props.eggplant && '#67B77C')
+        || (props.purple && '#E6708A')
     };
     border-radius: 2rem;
 `;
@@ -224,7 +224,7 @@ const dataLines = [
 
 
 const color = {
-    elementColor: ['#473698', '#460A68', '#6D2077', '#00A2A1']
+    elementColor: ['#F2D076', '#2E9AD8', '#67B77C', '#E6708A']
 }
 
 class Main extends Component {

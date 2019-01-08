@@ -76,7 +76,7 @@ const CompanyHeadline = () => {
     <Container>
       <CompanyInfo>
           <h1>FALCK A/S</h1>
-          <h5>C/O Flackhuset | Polititorvet 1 | 1567 København V</h5>
+          <h5>C/O Falckhuset | Polititorvet 1 | 1567 København V</h5>
       </CompanyInfo>
       <ProjectResponsible>
           <p>Client responsible:</p>

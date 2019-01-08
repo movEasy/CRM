@@ -83,7 +83,7 @@ let data = {
     datasets: [{
         data: [10, 20, 30, 40],
         backgroundColor: [
-            '#00A2A1', '#473698', '#00338D', '#6D2077'
+            '#F2D076', '#2E9AD8', '#67B77C', '#E6708A'
         ],
     }],
     labels: [
