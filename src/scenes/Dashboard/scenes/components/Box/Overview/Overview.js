@@ -14,7 +14,7 @@ const WrapperDepartment = styled.div`
     max-height: 15rem;
     overflow-y: scroll;
 
-    div:nth-child(even) {
+    div:nth-of-type(even) {
         background-color: #ededea;
     }
 `;

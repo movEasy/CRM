@@ -83,9 +83,11 @@ class ItemDetails extends Component {
 
     handleMouseOver = (e) => {
 
-        this.setState({
-            isHovering: true,
-        });
+        setTimeout(() => {
+            this.setState({
+                isHovering: true,
+            })
+        }, 200)
     }
 
     handleMouseOut = () => {

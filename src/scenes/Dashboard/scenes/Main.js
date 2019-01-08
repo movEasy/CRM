@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import _ from 'lodash';
 
 // Import components
 import Index from './components/Box/index';
@@ -118,38 +117,38 @@ const data = {
     }
 }
 
-const data2 = {
-    departments:  {
-        department1:{
-            id: '1', 
-            infoItem: ['31-2012-2018', 'HL', 'Ryk falk for om vi skal lave et TP review(...)'],
-            status: 'notComplete',
-            details: [
-                ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
-                ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
-                ['4016872', 'Siemens/MD/Christiaan Torres Stocki', 'complete'],
-                ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
-                ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
-                ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
-            ]
-        },
-        department2:{
-            id: '2', 
-            status: 'complete',
-            infoItem: ['01-04-2019', 'JA', 'Tag fat i Carsten omkring Mobility policy']
-        },
-        department3:{
-            id: '3', 
-            status: 'notComplete',
-            infoItem: ['29-04-2019', 'MP', 'Test tekst']
-        },
-        department4:{
-            id: '3', 
-            status: 'complete',
-            infoItem: ['29-04-2019', 'MP', 'Tag fat i Carsten omkring Mobility policy']
-        },
-    }
-}
+// const data2 = {
+//     departments:  {
+//         department1:{
+//             id: '1', 
+//             infoItem: ['31-2012-2018', 'HL', 'Ryk falk for om vi skal lave et TP review(...)'],
+//             status: 'notComplete',
+//             details: [
+//                 ['4016145', 'M&PS Siemens Project 7P', 'notComplete'],
+//                 ['4014674', 'Novartis-ch-Alexandra Bianca Abraham', 'complete'],
+//                 ['4016872', 'Siemens/MD/Christiaan Torres Stocki', 'complete'],
+//                 ['4014128-1204', 'Corp-AP Pension-Various tax advice', 'complete'],
+//                 ['4016146', 'M&PS-Nielse Soelberg', 'complete'],
+//                 ['4016146', 'M&PS Siemens Project 7P', 'notComplete'],
+//             ]
+//         },
+//         department2:{
+//             id: '2', 
+//             status: 'complete',
+//             infoItem: ['01-04-2019', 'JA', 'Tag fat i Carsten omkring Mobility policy']
+//         },
+//         department3:{
+//             id: '3', 
+//             status: 'notComplete',
+//             infoItem: ['29-04-2019', 'MP', 'Test tekst']
+//         },
+//         department4:{
+//             id: '3', 
+//             status: 'complete',
+//             infoItem: ['29-04-2019', 'MP', 'Tag fat i Carsten omkring Mobility policy']
+//         },
+//     }
+// }
 
 const data3 = {
     cus_economy: {

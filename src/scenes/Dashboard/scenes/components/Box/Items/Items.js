@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MdCheckCircle } from 'react-icons/md';
 
@@ -15,9 +15,10 @@ const ItemWrapper = styled.div`
     margin-left: 1rem;
     margin-right: 1rem;
 
-    flex: 1 1 auto;
-    height: 6rem;
-    /* min-height: 4rem; */
+    flex: 1 0 auto;
+    max-height: 5rem;
+    height: 5rem;
+    min-height: 4rem;
 
     :hover {
         color: ${props => props.theme.lightBlue};
@@ -121,7 +122,7 @@ const ItemWrapperDepartments = styled.div`
 
 `;
 
-const HoverTask = styled.div`
+const HoverTask = styled.span`
     position: absolute;
     top: 50%;
     left: 35%;
@@ -175,14 +176,14 @@ class Items extends Component {
     }
 
     handleMouseOver = (e) => {
-        console.log(`This is handleMouseOver: ${this.state.isHovering}`)
-        this.setState({
-            isHovering: true,
-        });
+        setTimeout(() => {
+            this.setState({
+                isHovering: true,
+            })
+        }, 200)
     }
 
     handleMouseOut = () => {
-        console.log('Mouse leeeeaving')
         this.setState({
             isHovering: false,
         });
@@ -205,7 +206,7 @@ class Items extends Component {
         } else {
             item = (
                 <>
-                    <ItemWrapper key={Math.random()}
+                    <ItemWrapper key={id}
                         onMouseEnter={(e) => this.handleMouseOver(e)}
                         onMouseLeave={this.handleMouseOut}
                     >
@@ -215,8 +216,16 @@ class Items extends Component {
                                 <span keys={Math.random()}> <MdCheckCircle className='complete' />{el}</span> :
                                 <span keys={Math.random()}><p>{el}</p></span>)}
                     </ItemWrapper>
-                    {this.state.isHovering &&
-                        <HoverTask key={Math.random()}>
+
+                </>
+            )
+        }
+
+        return ( 
+            <>
+                {item}
+                {this.state.isHovering &&
+                        <HoverTask key='3'>
                             <h3>Ryk Flack for om vi skal lave et TP Review</h3>
                             <div className="task-hover__date-and-person">
                                 <span>
@@ -234,14 +243,6 @@ class Items extends Component {
                             </div>
                         </HoverTask>
                     }
-                </>
-            )
-        }
-
-        return ( 
-            <>
-                {item}
-                
             </>
         );
     }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import _ from 'lodash';
-import { MdChevronRight, MdChevronLeft } from 'react-icons/md';
 import Img1 from './img/symbol1.png';
 import Img2 from './img/symbol2.png';
 

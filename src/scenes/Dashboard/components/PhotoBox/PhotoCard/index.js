@@ -110,10 +110,11 @@ class Contact extends Component {
     }
 
     handleMouseOver = (e) => {
-        console.log(e)
-        this.setState({
-            isHovering: true,
-        });
+        setTimeout(() => {
+            this.setState({
+                isHovering: true,
+            })
+        }, 200)
     }
 
     handleMouseOut = () => {
