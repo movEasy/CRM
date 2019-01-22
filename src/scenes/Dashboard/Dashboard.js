@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 // Import theme
@@ -20,18 +20,18 @@ import { data } from './components/PhotoBox/PhotoBox.stories';
 class Dashboard extends Component {
   render() {
     return (
-            <ThemeProvider theme={KpmgTheme}>
-                <DashboardContainer>
-                    <Header />
-                    <MultipleColorBar />
-                    <CompanyHeadline />
-                    <Navigation />
-                    <Main />
-                    <PhotoBox data={data}/>
-                </DashboardContainer>
-            </ThemeProvider>
-        )
-    }
+      <ThemeProvider theme={KpmgTheme}>
+        <DashboardContainer>
+          <Header />
+          <MultipleColorBar />
+          <CompanyHeadline />
+          <Navigation />
+          <Main />
+          <PhotoBox data={data} />
+        </DashboardContainer>
+      </ThemeProvider>
+    );
+  }
 }
 
 export default Dashboard;

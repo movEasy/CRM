@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import styled from 'styled-components';
 import { Doughnut } from 'react-chartjs-2';
 
-
 // const data01 = [{name: 'CIT', value: 400}, {name: 'TP', value: 300}, {name: 'INDIRECT', value: 300}, {name: 'MPS', value: 200},]
 
 // const colors = ['#00A2A1', '#473698', '#00338D', '#6D2077'];
@@ -40,7 +39,7 @@ import { Doughnut } from 'react-chartjs-2';
 //     width: 1rem;
 //     height: 1rem;
 //     color: black;
-//     background-color: ${ props => 
+//     background-color: ${ props =>
 //         (props.turquoise && '#00A2A1')
 //         || (props.darkBlue && props.theme.darkBlue)
 //         || (props.eggplant && props.theme.eggplant)
@@ -50,11 +49,11 @@ import { Doughnut } from 'react-chartjs-2';
 // `;
 
 // class PC extends Component {
-//     state = { 
+//     state = {
 
 //      }
 
-//     render() { 
+//     render() {
 
 //         const { year } = this.props;
 //         return (
@@ -74,46 +73,32 @@ import { Doughnut } from 'react-chartjs-2';
 //                     <Pie dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
 //                     <Tooltip/>
 //                 </PieChart>
-//             </Wrapper> 
+//             </Wrapper>
 //         );
 //     }
 // }
 
 let data = {
-    datasets: [{
-        data: [10, 20, 30, 40],
-        backgroundColor: [
-            '#F2D076', '#2E9AD8', '#67B77C', '#E6708A'
-        ],
-    }],
-    labels: [
-        'CIT',
-        'TP',
-        'INDIRECT',
-        'MPS'
-    ],
-}
+  datasets: [
+    {
+      data: [10, 20, 30, 40],
+      backgroundColor: ['#473698', '#460A68', '#6D2077', '#00A2A1'],
+    },
+  ],
+  labels: ['CIT', 'TP', 'INDIRECT', 'MPS'],
+};
 
 let options = {
-    legend: {
-        display: false
-    }
-}
+  legend: {
+    display: false,
+  },
+};
 
 class PC extends Component {
-    state = { 
-
-     }
-    render() { 
-        return ( 
-            <Doughnut 
-                data={data}
-                options={options}
-                width={100}
-                height={90}
-            />
-         );
-    }
+  state = {};
+  render() {
+    return <Doughnut data={data} options={options} width={100} height={90} />;
+  }
 }
- 
+
 export default PC;

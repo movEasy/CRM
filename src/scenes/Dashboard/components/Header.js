@@ -12,7 +12,7 @@ const HeaderContainer = styled.div`
     background-color: ${props => props.theme.darkBlue};
     padding-left: ${props => props.theme.paddingContainer};
     padding-right: ${props => props.theme.paddingContainer};
-	height: 10vh;
+	height: 5vh;
 	
 	svg {
 		width: 3rem;

@@ -9,7 +9,7 @@ const Container = styled.div`
     background-color: ${ props => props.theme.white };
     justify-content: space-between;
     align-items: center;
-    height: 15vh;
+    height: 10vh;
 `;
 
 const CompanyInfo = styled.div`
