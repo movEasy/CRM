@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   background-color: ${props => props.theme.white};
   flex: 1 1 100%;
-  max-height: 49%;
+  max-height: 48%;
   /* height: 17rem; */
   justify-content: space-between;
   padding-left: 1rem;

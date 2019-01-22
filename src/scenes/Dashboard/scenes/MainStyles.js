@@ -6,16 +6,25 @@ export const Container = styled.div`
   padding-left: ${props => props.theme.paddingContainer};
   padding-right: ${props => props.theme.paddingContainer};
   justify-content: center;
-  height: 50rem;
+  height: 55rem;
   width: 100%;
 `;
 
 export const ElementContainer = styled.div`
   display: flex;
-  height: 90%;
+  height: 95%;
   flex-direction: column;
   justify-content: space-between;
   margin-right: 15rem;
+
+  h3 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  h3:nth-child(1) {
+    margin: 0;
+  }
 `;
 
 export const Dashboard = styled.div`

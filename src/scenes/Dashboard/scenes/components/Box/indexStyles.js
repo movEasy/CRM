@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const WrapperMain = styled.div`
   width: 100%;
-  max-height: 49%;
+  max-height: 48%;
   min-width: 60rem;
   min-height: 20rem;
   border-radius: 0.4rem;

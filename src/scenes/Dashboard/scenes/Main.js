@@ -97,7 +97,9 @@ class Main extends Component {
     return (
       <Container>
         <ElementContainer>
+          <h3>Projects</h3>
           <NewBox />
+          <h3>Tasks</h3>
           <Index
             data={tasksData}
             styleHack="tasks"
