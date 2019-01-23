@@ -6,7 +6,7 @@ export const ItemElement = styled.p`
   flex: 1 1 100px;
   height: 50px;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   .completed {
     color: green;

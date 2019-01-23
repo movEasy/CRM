@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const PictureWrapper = styled.div`
-  height: 100%;
-  background-color: lightgray;
-
+  display: flex;
+  width: 50%;
+  background-color: white;
+  box-shadow: 0.1rem 0.5rem 0.9rem black;
   img {
-    width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
   }
 `;

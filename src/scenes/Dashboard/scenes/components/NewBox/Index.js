@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import _ from 'lodash';
 
 import {
@@ -20,7 +20,7 @@ import {
 
 import { countProjects } from './utils/filterFunction';
 
-class NewBox extends React.Component {
+class NewBox extends PureComponent {
   state = {
     data: serviceLineData,
     headers: headers,

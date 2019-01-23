@@ -15,7 +15,7 @@ import Navigation from './components/Navigation';
 import Main from './scenes/Main';
 import PhotoBox from './components/PhotoBox/PhotoBox';
 
-import { data } from './components/PhotoBox/PhotoBox.stories';
+import { data } from './services/DummyDataPhoto';
 
 class Dashboard extends Component {
   render() {

@@ -10,9 +10,9 @@ const WrapperPhotoBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.5rem;
   width: 100%;
-  min-height: 25rem;
+  height: 13rem;
+  /* flex-basis: 100%; */
   padding-left: ${props => props.theme.paddingContainer};
   padding-right: ${props => props.theme.paddingContainer};
 `;
@@ -36,7 +36,7 @@ const ImageRight = styled.img`
 class PhotoBox extends Component {
   state = {
     start: 0,
-    end: 6,
+    end: 5,
   };
 
   handlePhotoEnd = e => {
